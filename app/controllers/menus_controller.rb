@@ -1,11 +1,11 @@
 class MenusController < ApplicationController
     include MenusHelper
     def index
-        doc = getPage
     end
-    
-    def getPaage
-        
+
+    def getMenu
+        @menu_info = get_menu_info
+        render :index
     end
-    
+
 end

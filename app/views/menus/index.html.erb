@@ -1,3 +1,22 @@
-今日のメニューは！
- 
- 
+今日のメニューは！<br><br>
+
+<%= link_to '見てみる!!', get_menu_path, class: 'btn btn-default' %>
+<br><br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+<% if @menu_info != nil %>
+  <%= @menu_info[:menudate] %>のMENU!!!!<br>
+  <%= @menu_info[:maindish] %><br>
+  <% @menu_info[:menulist].each do |menu| %>
+    ★<%= menu %><br>
+  <% end %>
+<% else %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<% end %>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
