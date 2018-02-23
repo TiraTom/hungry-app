@@ -1,9 +1,14 @@
 require 'open-uri'
 require 'nokogiri'
 require 'csv'
+require 'selenium-webdriver'
 
 module MenusHelper
     def getPage
+      driver = Selenium::WebDriver.for :firefox
+      driver.navigate.to 'http://www.tamagoya.co.jp/menu_list.html'
+      element = driver.find_element(:id, 'latestnews_txt')
+                          .find_element()
 #        uri = 'http://www.yahoo.co.jp/'
 #        doc = Nokogiri::HTML(open(uri), nil, "utf-8")
 #        doc = Nokogiri::HTML.parse(open(uri), nil, "utf-8")
@@ -26,6 +31,9 @@ module MenusHelper
           p node.css('img').attribute('src').value
           # 記事のサムネイル画像
           p node.css('a').attribute('href').value
+
+          driver.quit
+
         end
     end
 end
