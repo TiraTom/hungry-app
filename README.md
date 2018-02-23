@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+お弁当の玉子屋さんのHPから、メニューを取得します。
+<http://www.tamagoya.co.jp/menu_list.html>
+
+Rails、スクレイピングの練習です。
