@@ -4,4 +4,8 @@ class MenusController < ApplicationController
         doc = getPage
     end
     
+    def getPaage
+        
+    end
+    
 end
