@@ -1,15 +1,27 @@
 require 'open-uri'
 require 'nokogiri'
 require 'csv'
+require 'selenium-webdriver'
+require 'net/http'
+require 'uri'
 
 module MenusHelper
     def getPage
+        
+        driver = Selenium::WebDriver.for :firefox
+        
+        # スクレイピング先のURL
+        driver.navigate.to = "http://www.tamagoya.co.jp/menu_list.html"
+        driver.manage.timeouts.implicit_wait = 30
+        
+        latestnews = driver.find_element(:css, "latestnews_txt").text
+        
+        
+        
+        driver.quit
 #        uri = 'http://www.yahoo.co.jp/'
 #        doc = Nokogiri::HTML(open(uri), nil, "utf-8")
 #        doc = Nokogiri::HTML.parse(open(uri), nil, "utf-8")
-        # スクレイピング先のURL
-#        url = 'http://matome.naver.jp/tech'
-        url = "http://www.tamagoya.co.jp/menu_list.html"
         charset = nil
         html = open(url) do |f|
           charset = f.charset # 文字種別を取得
